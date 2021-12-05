@@ -7,7 +7,7 @@ def main(argv):
  #  inputFile = open('C:\\Users\\Nastasia\\Documents\\src\\advent_of_code2021\\day1-sonar-sweep\\test.txt','r')
    inputFile = open(argv[0],'r')
 
-   #read tthe input file
+   #read the input file
    content = inputFile.readlines() 
    inputFile.close()
    
@@ -16,7 +16,6 @@ def main(argv):
 
    #counter for the number of increases  
    increases = 0
-   decreases = 0
 
    # Iterating through the depths
    for line in content: 
@@ -41,9 +40,6 @@ def main(argv):
 
       prevDepth = currDepth
 
-
-
-   print('total:')
    print("Total Increases: " + str(increases))
 # print(decreases)
 
