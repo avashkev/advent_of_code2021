@@ -4,11 +4,12 @@ import sys
 
 def main(argv):
     #get the input file
-    inputFile = open('test.txt','r')
+    inputFile = open(argv[0],'r')
 
     #read tthe input file
     content = inputFile.readlines() 
-
+    inputFile.close()
+    
     #array of depths
     depths = []
 
@@ -19,8 +20,8 @@ def main(argv):
     # Iterating through the depths
     for line in content: 
         depths.append(int(line.strip('\n')))
+    
 
-    print(len(depths))
     #iteratte through the array and count increases
     for indx in range(1, len(depths)):
         if depths[indx] > depths[indx-1]:
@@ -36,7 +37,7 @@ def main(argv):
     print('total:')
     print(increases)
    # print(decreases)
-    inputFile.close()
+
 
 if __name__ == "__main__":
    main(sys.argv[1:])
