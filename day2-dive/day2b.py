@@ -18,15 +18,17 @@ def main(argv):
 
     yPos = 0 #depth
     xPos = 0 #horizontal position
+    aim = 0
 
     for command in directions:
         x = int(command[1].strip('\n'))
         if command[0] == 'up':
-            yPos -= x
+            aim -= x
         elif command[0] == 'down':
-            yPos += x
+            aim += x
         elif command[0] == 'forward':
             xPos += int(command[1].strip('\n'))
+            yPos += aim*x
 
     print(str(xPos*yPos))
 
